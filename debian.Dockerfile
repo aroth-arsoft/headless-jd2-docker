@@ -13,10 +13,8 @@ RUN apt-get update && apt-get dist-upgrade -yqq && \
 	cd /tmp/ && tar -xf su-exec.tar.gz && cd su-exec-0.2 && make && cp su-exec /usr/bin &&\
 	apt-get purge -yqq wget make gcc && apt-get autoremove -yqq && cd / && rm -rf /tmp/*
 # Beta sevenzipbindings and entrypoint
-COPY common/*.jar /opt/JDownloader/libs/
-COPY common/entrypoint.sh /opt/JDownloader/
+COPY common/* /opt/JDownloader/
 RUN chmod +x /opt/JDownloader/entrypoint.sh
-
 
 VOLUME /opt/JDownloader/cfg
 VOLUME /opt/JDownloader/Downloads

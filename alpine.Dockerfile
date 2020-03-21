@@ -10,8 +10,7 @@ RUN apk update && apk upgrade && \
     java -Djava.awt.headless=true -jar /opt/JDownloader/JDownloader.jar
 
 # Beta sevenzipbindings and entrypoint
-COPY common/*.jar /opt/JDownloader/libs/
-COPY common/entrypoint.sh /opt/JDownloader/
+COPY common/* /opt/JDownloader/
 RUN chmod +x /opt/JDownloader/entrypoint.sh
 
 VOLUME /opt/JDownloader/cfg
