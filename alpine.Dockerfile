@@ -10,9 +10,12 @@ RUN apk update && apk upgrade && \
     java -Djava.awt.headless=true -jar /opt/JDownloader/JDownloader.jar
 
 # Beta sevenzipbindings and entrypoint
-COPY common/* /opt/JDownloader/
+COPY common/*.jar /opt/JDownloader/libs/
+COPY common/entrypoint.sh /opt/JDownloader/
 RUN chmod +x /opt/JDownloader/entrypoint.sh
 
+VOLUME /opt/JDownloader/cfg
+VOLUME /opt/JDownloader/Downloads
 
 ENTRYPOINT ["tini", "-g", "--", "/opt/JDownloader/entrypoint.sh"]
 # Run this when the container is started
