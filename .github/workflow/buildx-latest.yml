@@ -36,7 +36,7 @@ jobs:
         id: docker_build
         with:
           context: .
-          platforms: linux/amd64,inux/arm64
+          platforms: linux/arm64
           push: true
           tags: ${{ steps.docker_meta.outputs.tags }}
       - name: Image digest
