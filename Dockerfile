@@ -1,5 +1,6 @@
 FROM openjdk:17-ea-22-slim-buster
 
+
 # Create directory, and start JD2 for the initial update and creation of config files.
 RUN apt-get update && \
 	apt-get install -yqq tini ffmpeg wget make gcc jq && \
