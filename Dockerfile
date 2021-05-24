@@ -1,6 +1,5 @@
-FROM openjdk:11-jre-slim-sid
+FROM openjdk:17-ea-22-slim-buster
 
-MAINTAINER PlusMinus <piddlpiddl@gmail.com>
 
 # Create directory, and start JD2 for the initial update and creation of config files.
 RUN apt-get update && \
