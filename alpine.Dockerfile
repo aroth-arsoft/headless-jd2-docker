@@ -1,6 +1,5 @@
 FROM openjdk:8-jre-alpine
 
-MAINTAINER PlusMinus <piddlpiddl@gmail.com>
 
 # Create directory, and start JD2 for the initial update and creation of config files.
 RUN apk update && apk upgrade && \
