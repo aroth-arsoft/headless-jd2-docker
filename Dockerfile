@@ -1,4 +1,4 @@
-FROM openjdk:20-ea-22-slim-buster
+FROM openjdk:21-ea-22-slim-buster
 
 # Create directory, and start JD2 for the initial update and creation of config files.
 RUN apt-get update && \
