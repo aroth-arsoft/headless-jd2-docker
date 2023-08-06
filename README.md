@@ -30,6 +30,7 @@ Environment Variable | Description
 ---------------------|------------
 EMAIL                | The MyJDownloader account e-mail. Is written automatically to config-file, if set.
 PASSWORD             | The MyJDownloader account password. Is written automatically to config-file, if set.
+DEVICENAME           | The MyJDownloader devicename. Is written automatically to config-file, if set.
 UID                  | Specifies the UID the daemon should run as. All created files will be owned by this UID. Defaults to 1000.
 GID                  | Specifies the GID for all created files. This only works in combination with the UID. Defaults to 100 for users.
 

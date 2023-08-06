@@ -21,6 +21,8 @@ else
     usermod -ag $GID
 fi
 
+DEVICENAME="${DEVICENAME:-jd2}"
+
 # Set MyJDownloader credentials
 CONFIG_FILE="/opt/JDownloader/cfg/org.jdownloader.api.myjdownloader.MyJDownloaderSettings.json"
 if [ ! -z "$EMAIL" ] ; then
@@ -28,7 +30,7 @@ if [ ! -z "$EMAIL" ] ; then
         echo '{}' > "$CONFIG_FILE"
     fi
 
-    CFG=$(jq -r --arg EMAIL "$EMAIL" --arg PASSWORD "$PASSWORD" '.email = $EMAIL | .password = $PASSWORD' "$CONFIG_FILE")
+    CFG=$(jq -r --arg EMAIL "$EMAIL" --arg PASSWORD "$PASSWORD" '.email = $EMAIL | .password = $PASSWORD | .devicename = $DEVICENAME' "$CONFIG_FILE")
     [ ! -z "$CFG" ] && echo "$CFG" > "$CONFIG_FILE"
 fi
 
